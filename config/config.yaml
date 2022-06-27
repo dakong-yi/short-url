@@ -1,0 +1,33 @@
+service: short-url
+
+env: development
+
+server:
+  protocol: http
+  host: "0.0.0.0"
+  port: 8888
+  mode: debug
+
+mongo:
+  database: short_url
+  url: mongodb://docker:mongopw@localhost:55002
+
+
+mysql:
+  dsn: mysql://root:mysqlpw@localhost:55001
+  host: localhost
+  port: 55001
+  user: root
+  password: mysqlpw
+  database: test
+  charset: utf8mb4
+  timeZone: Local
+  parseTime: true
+  logLevel: debug
+  slowSql: 50ms
+
+redis:
+  address: 127.0.0.1:55000
+  username: default
+  password: redispw
+  db: 0

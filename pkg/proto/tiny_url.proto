@@ -1,0 +1,18 @@
+syntax = "proto3";
+package pb;
+option go_package = "../pb/";
+
+
+service TinyUrl {
+  rpc GetTinyUrl(OriGinUrl) returns(ShortUrl);
+
+  rpc GetOriginUrl(ShortUrl) returns(OriGinUrl);
+}
+
+message OriGinUrl {
+  string origin_url = 1 ;
+}
+
+message ShortUrl {
+  string tiny_url = 1;
+}
